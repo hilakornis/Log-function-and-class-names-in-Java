@@ -6,11 +6,11 @@ import java.util.regex.Pattern;
 
 public class LoggerClassNameAndFunctionName {
 //    public static final String regrexLegalNames = "[a-z0-9A-Z]";
-public static final String regrexLegalNames = "[a-zA-Z][a-zA-Z0-9_]";
+public static final String regrexLegalVariableAndFunctionNames = "[a-zA-Z][a-zA-Z0-9_]";
     private static final String regexCaptureUntilFirstOpenBracket = "[\\s\\S]*?(?=\\([\\w\\W])";
-    private static final String regexClassAndFunctionName = regrexLegalNames+"*."+regrexLegalNames+"*$";
+    private static final String regexClassAndFunctionName = regrexLegalVariableAndFunctionNames +"*."+ regrexLegalVariableAndFunctionNames +"*$";
     private static final String regrexFunctionName = "(?<=((\\.))).*";
-    private static final String regrexClassName = regrexLegalNames+"*?(?=\\.)";
+    private static final String regrexClassName = regrexLegalVariableAndFunctionNames +"*?(?=\\.)";
 
     private static String getStringWithRegrex(String regrexPattern, String input) {
         String res = "";
@@ -40,6 +40,7 @@ public static final String regrexLegalNames = "[a-zA-Z][a-zA-Z0-9_]";
 
     public static void printClassNameAndFuncName(String TAG) {
         String s = TAG + " : " + printClassAndFunctionName();
+        //todo: remove
         System.out.println(s);
 //        todo: return log:
 
