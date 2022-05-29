@@ -1,6 +1,6 @@
 package Main;
 
-import Main.Class.LoggerClassNameAndFunctionName;
+import Main.Class.LoggerClassNameAndFunctionName_todo_change_to_android;
 
 import java.io.*;
 
@@ -10,7 +10,7 @@ public class Main {
 
     static  class A {
         static  public void funcA (){
-            LoggerClassNameAndFunctionName.printClassNameAndFuncName("TAG");
+            LoggerClassNameAndFunctionName_todo_change_to_android.printClassNameAndFuncName("TAG");
 
             class B {
 
@@ -21,7 +21,7 @@ public class Main {
                      String lineToParse = ste[1].toString();
 //                     System.out.println(lineToParse);
 
-                     LoggerClassNameAndFunctionName.printClassNameAndFuncName("TAG");
+                     LoggerClassNameAndFunctionName_todo_change_to_android.printClassNameAndFuncName("TAG");
 
 
                 }

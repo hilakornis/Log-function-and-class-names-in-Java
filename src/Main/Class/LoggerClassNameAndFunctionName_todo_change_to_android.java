@@ -1,12 +1,14 @@
 package Main.Class;
 
-import android.util.Log;
-
 import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class LoggerClassNameAndFunctionName {
+//todo: add this import:
+//import android.util.Log;
+
+
+public class LoggerClassNameAndFunctionName_todo_change_to_android {
 //    public static final String regrexLegalNames = "[a-z0-9A-Z]";
 public static final String regrexLegalVariableAndFunctionNames = "[a-zA-Z][a-zA-Z0-9_]";
     private static final String regexCaptureUntilFirstOpenBracket = "[\\s\\S]*?(?=\\([\\w\\W])";
@@ -30,7 +32,7 @@ public static final String regrexLegalVariableAndFunctionNames = "[a-zA-Z][a-zA-
 
     private static String printClassAndFunctionName() {
         StackTraceElement[] ste = Thread.currentThread().getStackTrace();
-        String lineToParse = ste[4].toString();
+        String lineToParse = ste[3].toString();
 
         String lineNoBrackets = getStringWithRegrex(regexCaptureUntilFirstOpenBracket, lineToParse);
         String lineOnlyFunctionAndClassName = getStringWithRegrex(regexClassAndFunctionName, lineNoBrackets);
@@ -40,43 +42,14 @@ public static final String regrexLegalVariableAndFunctionNames = "[a-zA-Z][a-zA-
         return "[" + onlyClassName + ":" + onlyFunctionName + "]";
     }
 
-    public static void printClassNameAndFuncNameD(String TAG) {
-        String s = TAG + ":" + printClassAndFunctionName();
-
-        Log.d(TAG,printClassAndFunctionName());
-    }
-
-
-    public static void printClassNameAndFuncNameI(String TAG) {
+    public static void printClassNameAndFuncName(String TAG) {
         String s = TAG + " : " + printClassAndFunctionName();
+        //todo: remove
+        System.out.println(s);
+//        todo: return log:
 
-        Log.i(TAG,printClassAndFunctionName());
+//        Log.d(TAG,printClassAndFunctionName());
+
     }
-
-    public static void printClassNameAndFuncNameV(String TAG) {
-        String s = TAG + " : " + printClassAndFunctionName();
-
-        Log.v(TAG,printClassAndFunctionName());
-    }
-
-    public static void printClassNameAndFuncNameE(String TAG) {
-        String s = TAG + " : " + printClassAndFunctionName();
-
-        Log.e(TAG,printClassAndFunctionName());
-    }
-
-    public static void printClassNameAndFuncNameW(String TAG) {
-        String s = TAG + " : " + printClassAndFunctionName();
-
-        Log.e(TAG,printClassAndFunctionName());
-    }
-
-    public static void printClassNameAndFuncNameWTF(String TAG) {
-        String s = TAG + " : " + printClassAndFunctionName();
-
-        Log.wtf(TAG,printClassAndFunctionName());
-    }
-
-
 
 }

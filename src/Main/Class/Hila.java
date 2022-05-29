@@ -77,6 +77,6 @@ public class Hila {
 
 
     public static void main(String[] args) {
-        LoggerClassNameAndFunctionName.printClassNameAndFuncName("TAG");
+        LoggerClassNameAndFunctionName_todo_change_to_android.printClassNameAndFuncName("TAG");
     }
 }
