@@ -14,6 +14,8 @@ public static final String regrexLegalVariableAndFunctionNames = "[a-zA-Z][a-zA-
     private static final String regrexFunctionName = "(?<=((\\.))).*";
     private static final String regrexClassName = regrexLegalVariableAndFunctionNames +"*?(?=\\.)";
 
+    private static final int level_in_stack_trace = 4;
+
     private static String getStringWithRegrex(String regrexPattern, String input) {
         String res = "";
         Pattern pattern = Pattern.compile(regrexPattern, Pattern.CASE_INSENSITIVE);
@@ -30,7 +32,7 @@ public static final String regrexLegalVariableAndFunctionNames = "[a-zA-Z][a-zA-
 
     private static String printClassAndFunctionName() {
         StackTraceElement[] ste = Thread.currentThread().getStackTrace();
-        String lineToParse = ste[4].toString();
+        String lineToParse = ste[level_in_stack_trace].toString();
 
         String lineNoBrackets = getStringWithRegrex(regexCaptureUntilFirstOpenBracket, lineToParse);
         String lineOnlyFunctionAndClassName = getStringWithRegrex(regexClassAndFunctionName, lineNoBrackets);
