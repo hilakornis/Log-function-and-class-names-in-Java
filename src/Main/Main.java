@@ -10,7 +10,7 @@ public class Main {
 
     static  class A {
         static  public void funcA (){
-            LoggerClassNameAndFunctionName_todo_change_to_android.printClassNameAndFuncName("TAG");
+//            LoggerClassNameAndFunctionName_todo_change_to_android.printClassNameAndFuncName("TAG");
 
             class B {
 
@@ -21,7 +21,7 @@ public class Main {
                      String lineToParse = ste[1].toString();
 //                     System.out.println(lineToParse);
 
-                     LoggerClassNameAndFunctionName_todo_change_to_android.printClassNameAndFuncName("TAG");
+//                     LoggerClassNameAndFunctionName_todo_change_to_android.printClassNameAndFuncName("TAG");
 
 
                 }
